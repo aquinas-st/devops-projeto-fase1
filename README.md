@@ -111,4 +111,4 @@ terraform destroy
 
 ## Autor
 
-[Seu Nome] — PUCRS Online — 2026
+[Vinícius Oliveira de Almeida] — PUCRS Online — 2026
