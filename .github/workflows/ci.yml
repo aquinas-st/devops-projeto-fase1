@@ -1,0 +1,53 @@
+name: Pipeline de Integração Contínua (CI)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Build, Lint e Testes
+    runs-on: ubuntu-latest
+
+    steps:
+      # Etapa 1: Checkout do código
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      # Etapa 2: Configurar Node.js
+      - name: Configurar Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Etapa 3: Instalar dependências
+      - name: Instalar dependências
+        run: npm ci
+
+      # Etapa 4: Executar Lint
+      - name: Verificar código com ESLint
+        run: npm run lint
+
+      # Etapa 5: Executar testes unitários
+      - name: Executar testes
+        run: npm test
+
+      # Etapa 6: Build
+      - name: Build da aplicação
+        run: npm run build
+
+      # Resumo final
+      - name: Resumo do pipeline
+        if: success()
+        run: |
+          echo "✅ Pipeline de CI concluído com sucesso!"
+          echo "📋 Etapas executadas:"
+          echo "   1. Checkout do código"
+          echo "   2. Setup Node.js 20"
+          echo "   3. Instalação de dependências"
+          echo "   4. Lint (ESLint)"
+          echo "   5. Testes unitários (Jest)"
+          echo "   6. Build"

@@ -1,0 +1,23 @@
+{
+  "name": "devops-projeto-fase1",
+  "version": "1.0.0",
+  "description": "Projeto DevOps - Fase 1: Configuração e Automação Inicial",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest --verbose",
+    "lint": "eslint src/ tests/",
+    "build": "echo 'Build concluído com sucesso!'"
+  },
+  "keywords": ["devops", "ci", "terraform", "nodejs"],
+  "author": "[Seu Nome]",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
