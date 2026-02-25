@@ -10,7 +10,7 @@
     "build": "echo 'Build concluído com sucesso!'"
   },
   "keywords": ["devops", "ci", "terraform", "nodejs"],
-  "author": "[Seu Nome]",
+  "author": "[Vinícius Oliveira de Almeida]",
   "license": "MIT",
   "dependencies": {
     "express": "^4.21.0"
