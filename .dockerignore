@@ -1,0 +1,8 @@
+node_modules
+.git
+.github
+terraform
+tests
+*.md
+.eslintrc.js
+.gitignore
